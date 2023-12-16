@@ -7,12 +7,15 @@ package com.mycompany.gestao_venda.modelo.dao;
 import com.mycompany.gestao_venda.modelo.conexao.Conexao;
 import com.mycompany.gestao_venda.modelo.conexao.ConexaoMysql;
 import com.mycompany.gestao_venda.modelo.dominio.Usuario;
+import java.security.CryptoPrimitive;
+import java.security.Security;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.Spring;
 
 /**
  *
@@ -67,6 +70,9 @@ public class UsuarioDao {
     }
 
     private void fillValuesPreparedStatement(PreparedStatement preparedStatement, Usuario usuario) throws SQLException {
+        
+        
+        
         preparedStatement.setString(1, usuario.getNome());
         preparedStatement.setString(2, usuario.getUsuario());
         preparedStatement.setString(3, usuario.getSenha());
